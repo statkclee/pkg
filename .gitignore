@@ -1,0 +1,15 @@
+README.html
+LAYOUT.html
+FAQ.html
+DESIGN.html
+CONTRIBUTING.html
+CONDUCT.html
+*~
+*.pyc
+_site
+.DS_Store
+fig/Thumbs.db
+play_with_data_conference.Rproj
+.Rproj.user
+.Rhistory
+tutorial/02_parameterized_rmd/report
