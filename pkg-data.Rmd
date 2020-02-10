@@ -1,0 +1,74 @@
+---
+layout: page
+title: "R 팩키지"
+subtitle: "데이터 팩키지"
+output:
+  html_document:
+    css: style.css
+    includes:
+    theme: default
+    toc: yes
+    toc_float: true
+    highlight: tango
+    code_folding: show
+    number_sections: TRUE
+mainfont: NanumGothic
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+library(tidyverse)
+```
+
+
+# 데이터 팩키지 {#data-pkg}
+
+다음이 가능하면 데이터 팩키지를 제작할 준비는 된것으로 간주한다.
+
+1. R/RStudio를 열어 실행시킬 수 있다. @SuseJohnston (Susan Johnstone)
+1. 팩키지를 설치할 수 있다.
+1. R 코드를 작성할 수 있다.
+1. R 함수를 작성할 수 있다.
+1. R 함수를 작성하는 것을 배울 열의가 있다.
+
+상기 5가지 조건이 만족되면 R 팩키지를 제작할 준비가 완료되었다.
+
+# R 팩키지 참고 사이트 {#r-pkg-site}
+
+- [Writing an R package from scratch - Hilary Parker](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) (@hspter)
+- [Making your first R package - Fong Chun Chan](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html) (@fongchunchan)
+- [You can make a package in 20 minutes – Jim Hester](https://resources.rstudio.com/rstudio-conf-2018/you-can-make-a-package-in-20-minutes-jim-hester)
+
+# 도구 {#r-pkg-tools}
+
+- DEVTOOLS / ROXYGEN2
+    - `load_all()` / `install()`
+    - `test()` / `check()`
+    - `document()`
+    - `release()` / `rhub_check()`
+- USETHIS
+    - `create_package()`
+    - `use_test()` / `use_r()`
+    - `use_git()` / `use_github()`
+    - `use_travis()` / `use_coverage()`
+- COVR
+    - `covr::report()`
+
+# 최소 R 팩키지 {#minimal-R-pkg}
+    
+- Package metadata (DESCRIPTION)
+- Code (R/)
+- Testing (tests/)
+- ~~Namespaces (NAMESPACE)~~
+- ~~Object documentation (man/)~~
+- ~~Vignettes (vignettes/)~~
+- ~~Data (data/)~~
+- ~~Compiled code (src/)~~
+- ~~Installed files (inst/)~~    
+
+# H. G. Wells 저작물 [^hg-wells-pkg] {#hg-wells}
+
+[^hg-wells-pkg]: [Erik Howard (2018-02-25), How to Create an R Data Package](https://www.erikhoward.net/blog/how-to-create-an-r-data-package/)
+

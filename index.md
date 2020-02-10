@@ -17,6 +17,7 @@ subtitle: RMDD(RMarkdown Driven Development)
     - [`tidyverse` 기반 R 팩키지와 라이브러리](https://statkclee.github.io/data-science/data-science-library.html)
     - [연관검색어 팩키지 - `suggestK`](https://statkclee.github.io/data-science/r-pkg-suggestK.html)
     - [CRAN 팩키지 제출](https://statkclee.github.io/data-science/r-pkg-cran.html)
+1. [데이터 팩키지](pkg-data.html)
 1. [모델 팩키지 - `hardhat`](pkg-hardhat.html)
 
 
