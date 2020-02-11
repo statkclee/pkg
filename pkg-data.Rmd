@@ -72,3 +72,13 @@ library(tidyverse)
 
 [^hg-wells-pkg]: [Erik Howard (2018-02-25), How to Create an R Data Package](https://www.erikhoward.net/blog/how-to-create-an-r-data-package/)
 
+# 수능 국어 R 팩키지: `sat-korean` {#sat-korean-r-pkg}
+
+수능 국어에 출제된 시, 소설, 수필 등 텍스트 데이터를 [나무위키, "수능에 출제된 문학작품 목록"](https://namu.wiki/w/수능에 출제된 문학작품 목록)을 참조하여 제작해본다.
+
+![수능 국어 R 팩키지](fig/sat-korean.png){#id .class width="100%"}
+
+
+## 텍스트 데이터 준비 {#text-dataset}
+
+
