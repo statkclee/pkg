@@ -23,7 +23,11 @@ library(tidyverse)
 ```
 
 
-# 데이터 팩키지 {#data-pkg}
+# 데이터 팩키지 [^data-pkg-2016] [^how-to-build-pkg] {#data-pkg}
+
+[^data-pkg-2016]: [Clean Code and R-fun (2016), "Creating a package for your data set"](https://rmhogervorst.nl/cleancode/blog/2016/03/07/content/post/2016-03-07-create-package-for-dataset/)
+
+[^how-to-build-pkg]: [Ed Hagen@WSU (2017/10/18), "Put your data in an R package"](https://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/)
 
 다음이 가능하면 데이터 팩키지를 제작할 준비는 된것으로 간주한다.
 

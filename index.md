@@ -18,6 +18,7 @@ subtitle: RMDD(RMarkdown Driven Development)
     - [연관검색어 팩키지 - `suggestK`](https://statkclee.github.io/data-science/r-pkg-suggestK.html)
     - [CRAN 팩키지 제출](https://statkclee.github.io/data-science/r-pkg-cran.html)
 1. [데이터 팩키지](pkg-data.html)
+    - [수능국어 데이터셋](pkg-korea-sat-dataset.html) 
 1. [모델 팩키지 - `hardhat`](pkg-hardhat.html)
 
 
