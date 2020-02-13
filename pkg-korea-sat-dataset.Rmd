@@ -13,6 +13,8 @@ output:
     code_folding: show
     number_sections: TRUE
 mainfont: NanumGothic
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include=FALSE}
@@ -36,4 +38,29 @@ library(tidyverse)
 
 # 대상 데이터셋 - 수능국어 {#text-dataset-korean}
 
+```{r rvest-html}
+library(tidyverse)
+library(rvest)
+library(httr)
+
+sat_url <- "https://namu.wiki/w/수능에 출제된 문학작품 목록"
+
+sat_txt <- sat_url %>% 
+  read_html() %>% 
+  # html_node(xpath='//*[@id="app"]/div/div[2]/article/div[3]/div[2]/div/div') %>% 
+  html_nodes(".wiki-heading-content") %>% 
+  html_text()
+
+sat_df <- sat_txt[str_detect(sat_txt, "^현대시")] %>% 
+  enframe %>% 
+  mutate(현대시   = str_extract(value, "(.*?)(?=현대소설)") %>% str_remove("현대시\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]")) %>% 
+  mutate(현대소설 = str_extract(value, "(?<=현대소설)(.*?)(?=수필)") %>% str_remove("\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]")) %>% 
+  mutate(수필     = str_extract(value, "(?<=수필)(.*?)(?=희곡,\\s?시나리오)")  %>% str_remove("\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]")) %>% 
+  mutate(`희곡, 시나리오` = str_extract(value, "(?<=희곡,\\s?시나리오)(.*?)(?=고전시가)")  %>% str_remove("\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]")) %>% 
+  mutate(고전시가 = str_extract(value, "(?<=고전시가)(.*?)(?=고전산문)") %>% str_remove("\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]")) %>% 
+  mutate(고전산문 = str_extract(value, "(?<=고전산문)(.*?)$") %>% str_remove("\\s*:\\s*") %>% str_remove_all("\\[[0-9]+\\]"))
+
+sat_df %>% 
+  DT::datatable()
+```
 
