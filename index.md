@@ -11,6 +11,10 @@ subtitle: RMDD(RMarkdown Driven Development)
 > 금수저, 은수저 슈퍼파워를 받은 사람과 기계학습을 통달한 흑수저들간의 무한경쟁이 드뎌 시작되었다. 물론, 
 > 금수저를 입에 물고 기계학습을 통달한 사람이 가장 유리한 출발을 시작한 것도 사실이다.
 
+> 오류나 경고 메시지를 영문으로 출력하고자 경우 
+> 
+> `Sys.setenv(LANGUAGE='en')`
+
 ## 학습목차 
 
 1. [R 팩키지 - 헬로우 월드](https://statkclee.github.io/data-science/r-pkg-hello-world.html)
