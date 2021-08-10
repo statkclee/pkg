@@ -24,6 +24,7 @@ subtitle: RMDD(RMarkdown Driven Development)
 1. [데이터 팩키지](pkg-data.html)
     - [수능국어 데이터셋](pkg-korea-sat-dataset.html) 
     - [오픈 통계 팩키지 - 데이터셋](pkg-openstat-dataset.html) 
+    - [맥 - 자모분리](pkg-mac-character.html)
 1. [모델 팩키지 - `hardhat`](pkg-hardhat.html)
 
 

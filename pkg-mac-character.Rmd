@@ -1,0 +1,72 @@
+---
+layout: page
+title: "R 팩키지"
+subtitle: "맥 - 자모분리"
+author:
+  - name: "이광춘"
+    affiliation: "[Tidyverse Korea](https://www.facebook.com/groups/tidyverse/)"
+date: "`r Sys.Date()`"
+tags: ["데이터 과학", "Data Science", "데이터 사이언스", "오픈통계", "데이터팩키지", "맥", "자모분리"]
+output:
+  html_document: 
+    include:
+      after_body: footer.html
+      before_body: header.html
+    theme: default
+    toc: yes
+    toc_depth: 2
+    toc_float: true
+    highlight: tango
+    code_folding: show
+    number_section: true
+    self_contained: true
+urlcolor: blue
+linkcolor: blue
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+library(tidyverse)
+```
+
+
+
+# 자모분리 [^reference] {#mac-characters}
+
+[^reference]: [[macOS 한글 호환성 1편] 한글 자소분리 해결법](https://tt.kollhong.com/79?category=674974)
+
+윈도우 파일을 맥으로 가져오게 되면 자음과 모음이 분리되는 자소분리가 되는 경우가 있다. 문제의 원인은 
+맥에서는 표준 정규화 인코딩 방식을 조합형(NFD, Normalization Form Canonical Decomposition)을 사용하는 반면, 윈도우에서는 완성형(NFC, Normalization Form Canonical Composition)을 지원하고 있기 때문이다.
+
+
+# 사례 {#example}
+
+[eStat](http://estat.me/estat/eStat/) 웹사이트에서 `.csv` 파일을 맥으로 다운로드 받게 되면 자모가 분리되는 사례를 목격하게 된다.
+
+- `초등과학5-2각행성의반지름(141쪽).csv` &rarr; `초등과학5-2각행성의반지름(141쪽).csv`
+
+```{r exampel, eval =  FALSE}
+library(tidyverse)
+planet_radius <- read_csv("data/초등과학5-2각행성의반지름(141쪽).csv")
+
+planet_radius
+```
+
+# 수정하는 방법 {#fix-problem}
+
+`brew install convmv` 명령어를 통해 `convmv` 프로그램을 설치한 후에 다음과 같이 실행한다.
+
+```{r fix-problem, eval = FALSE}
+convmv -f utf8 -t utf8 --nfc --notest <파일명>
+```
+
+# Automator 사용법 {#automator}
+
+
+[콜홍]: <https://tt.kollhong.com/79?category=674974> 참고 
+
