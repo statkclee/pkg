@@ -26,6 +26,7 @@ subtitle: RMDD(RMarkdown Driven Development)
     - [오픈 통계 팩키지 - 데이터셋](pkg-openstat-dataset.html) 
     - [맥 - 자모분리](pkg-mac-character.html)
 1. [모델 팩키지 - `hardhat`](pkg-hardhat.html)
+1. [팩키지 웹사이트 - `pkgdown`](pkg-pkgdown.html)
 
 
 ### [xwMOOC 오픈 교재](https://statkclee.github.io/xwMOOC/)
