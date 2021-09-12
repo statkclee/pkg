@@ -1,0 +1,27 @@
+---
+title: "호랑이"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# 호랑이 날다
+
+```{r setup}
+library(tiger)
+```
+
+
+```{r growl}
+roar()
+```
+

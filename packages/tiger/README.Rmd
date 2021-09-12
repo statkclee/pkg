@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# tiger
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+`tiger` 팩키지는 한글 R 팩키지 제작 방법을 차근차근 살펴봅니다.
+
+## 설치방법
+
+
+CRAN에 등록된 것이 아니라서 [GitHub](https://github.com/) 웹사이트에서 다음 방식으로 설치가능합니다.
+
+``` r
+# install.packages("devtools")
+devtools::install_github("statkclee/pkg")
+```
+
+## 사례
+
+팩키지 제작이 목적이라 호랑이의 다양한 정보를 담고 있지만,
+현재는 호랑이 소리만 기능으로 담고 있다.
+
+```{r example}
+library(tiger)
+
+roar()
+# roar
+
+```
+

@@ -1,0 +1,19 @@
+Package: tiger
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: knitr, rmarkdown, testthat
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Imports: dplyr
+NeedsCompilation: no
+Packaged: 2021-09-12 01:20:45 UTC; statkclee
+Built: R 4.0.1; ; 2021-09-12 01:20:53 UTC; windows

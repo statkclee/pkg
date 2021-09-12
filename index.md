@@ -17,10 +17,11 @@ subtitle: RMDD(RMarkdown Driven Development)
 
 ## 학습목차 
 
-1. [R 팩키지 - 헬로우 월드](https://statkclee.github.io/data-science/r-pkg-hello-world.html)
-    - [`tidyverse` 기반 R 팩키지와 라이브러리](https://statkclee.github.io/data-science/data-science-library.html)
+1. [`tidyverse` 기반 R 팩키지와 라이브러리](https://statkclee.github.io/data-science/data-science-library.html)
+    - [R 팩키지 - 헬로우 월드](https://statkclee.github.io/data-science/r-pkg-hello-world.html)
     - [연관검색어 팩키지 - `suggestK`](https://statkclee.github.io/data-science/r-pkg-suggestK.html)
     - [CRAN 팩키지 제출](https://statkclee.github.io/data-science/r-pkg-cran.html)
+    - [팩키지 제작 - `devtools`, `usethis`](pkg-usethis.html)
 1. [데이터 팩키지](pkg-data.html)
     - [수능국어 데이터셋](pkg-korea-sat-dataset.html) 
     - [오픈 통계 팩키지 - 데이터셋](pkg-openstat-dataset.html) 
