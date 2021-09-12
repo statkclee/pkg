@@ -1,0 +1,112 @@
+---
+layout: page
+title: "R 팩키지"
+subtitle: "오픈 통계 팩키지 - 데이터셋"
+author:
+  - name: "이광춘"
+    affiliation: "[Tidyverse Korea](https://www.facebook.com/groups/tidyverse/)"
+date: "`r Sys.Date()`"
+tags: ["데이터 과학", "Data Science", "데이터 사이언스", "오픈통계", "데이터팩키지"]
+output:
+  html_document: 
+    include:
+      after_body: footer.html
+      before_body: header.html
+    theme: default
+    toc: yes
+    toc_depth: 2
+    toc_float: true
+    highlight: tango
+    code_folding: show
+    number_section: true
+    self_contained: true
+urlcolor: blue
+linkcolor: blue
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center')
+
+library(tidyverse)
+```
+
+
+
+# 초중등 통계 데이터셋 {#stat-dataset}
+
+[`eStat`](https://estat.me/estat/eStat/) 웹사이트에 정리된 초중등 데이터셋을 `statdata` 데이터 팩키지에 포함시킨다. 기본적인 작업 흐름은 [`eStat`](https://estat.me/estat/eStat/) 웹사이트에서  `Textbook_Elementary` 아래 포함된 csv 파일을 로컬 파일로 `.csv` 형태로 저장한 후에 R 데이터 팩키지 외부 데이터를 가져와서 데이터셋 문서화하는 방식으로 작업한다.
+
+![](fig/estat-statdata.png)
+
+
+# R 데이터 팩키지 {#rdata-package}
+
+R 에서 데이터 팩키지를 생성하는 방식은 다음과 같다.
+
+1. `File` &rarr; `New Project` &rarr; `New Directory` &rarr; `R Package`
+    - 데이터 팩키지 제작을 위한 기본 준비 완료
+2. GitHub 저장소 연결
+    - GitHub에 저장소를 하나 생성한다.
+    - `git remote add origin <GitHub 저장소 이름>` &rarr; `git remote add origin git@github.com:tidyverse-korea/statdata.git`
+    - `git add` &rarr; `git commit -m` &rarr; `git push --set-upstream origin statdata`
+3. [`statdata`](https://github.com/tidyverse-korea/statdata) 확인
+    
+    
+# 데이터 팩키지 기여 {#rdata-package-contribution}
+
+[`statdata`](https://github.com/tidyverse-korea/statdata) 팩키지에 기여하는 방식은 다음과 같다.
+
+1. `statdata` 팩키지 개발 저장소를 클론한다.
+    - `git clone git@github.com:tidyverse-korea/statdata.git`
+2. [`eStat`](https://estat.me/estat/eStat/) 웹사이트에서 데이터를 선택하여 `.csv` 파일로 저장한다.
+3. 신규 데이터를 [`statdata`](https://github.com/tidyverse-korea/statdata) 데이터 팩키지에 반영한다.
+    -  외부 데이터를 데이터 팩키지로 가져온다.
+    - `DATASET.R` 스크립트를 작성해서 외부데이터를 팩키지 데이터로 변환시킨다.
+    - `data.R` 스크립트를 작성해서 데이터에 대한 문서화 작업을 수행한다.
+    - 오류사항을 수정한다.
+4. `Build` &rarr; `Check Package` 작업을 수행하여 다음 결과를 확인한 후에 Pull 요청을 보낸다.
+
+```{r check-openstat-pkg, eval = FALSE}
+── R CMD check results ───────────────────────────────────── statdata 0.1.0 ────
+Duration: 13.7s
+
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+
+R CMD check succeeded
+```
+
+# 데이터 팩키지 활용 {#rdata-package-usage}    
+
+`statdata` 팩키지를 설치하고 팩키지에 포함된 데이터를 확인한다.
+    
+```{r use-stat-data}
+# devtools::install_github("tidyverse-korea/statdata")
+library(statdata)
+library(tidyverse)
+
+data(shadow_length)
+
+shadow_length
+```
+
+각도와 길이 관계를 시각적으로 파악해보자.
+
+```{r 그림자길이}
+shadow_length %>% 
+  ggplot(aes(x = 각도, y = 길이)) +
+    geom_line() +
+    geom_point(size = 2) +
+    theme_bw(base_family = "NanumGothic") + 
+    labs(title = "그림자 길이",
+         caption = "초등과학 3-2 그림자 길이 136쪽")
+```
+
+    
+
+
+
+
